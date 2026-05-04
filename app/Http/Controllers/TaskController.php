@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
 use Illuminate\Http\Request;
+use App\Models\Task; 
 
 class TaskController extends Controller
 {
+    // Read
+    public function index()
+    {
+        $tasks = Task::latest()->get();
+        return view('dashboard', compact('tasks'));
+    }
+
+    // Create
     public function store(Request $request)
     {
         $request->validate([
@@ -24,13 +32,6 @@ class TaskController extends Controller
         return redirect()->back()->with('success', 'Task berhasil ditambahkan!');
     }
 
-    // Read
-    public function index()
-    {
-        $tasks = Task::latest()->get();
-        return view('dashboard', compact('tasks'));
-    }
-
     // Delete
     public function destroy($id)
     {
@@ -42,4 +43,3 @@ class TaskController extends Controller
         }
     }
 }
-    
