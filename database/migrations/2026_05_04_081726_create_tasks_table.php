@@ -14,6 +14,8 @@ return new class extends Migration
     Schema::create('tasks', function (Blueprint $table) {
         $table->id();
         $table->string('task_name'); // Tempat menyimpan isi tugasnya
+        $table->text('note')->nullable(); // Menambah fitur catatan
+        $table->date('deadline')->nullable(); // Menambah fitur tenggat waktu
         $table->boolean('is_completed')->default(false); // Status sudah selesai atau belum
         $table->timestamps();
     });
