@@ -28,11 +28,11 @@
             font-family: 'Outfit', sans-serif;
         }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
         .glass-input {
             background: rgba(255, 255, 255, 0.6);
@@ -47,7 +47,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-violet-600 via-fuchsia-600 to-orange-500 flex items-center justify-center p-4 antialiased selection:bg-white selection:text-fuchsia-600">
+<body class="min-h-screen bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 flex items-center justify-center p-4 antialiased selection:bg-purple-500 selection:text-white">
 
     <div class="w-full max-w-md">
         <!-- Main Card -->
@@ -59,20 +59,20 @@
             <div class="relative z-10">
                 <!-- Header -->
                 <div class="text-center mb-10">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/20 mb-4 shadow-inner border border-white/30 backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/40 mb-4 shadow-inner border border-white/50 backdrop-blur-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                         </svg>
                     </div>
-                    <h1 class="text-4xl font-bold text-white tracking-tight mb-2 drop-shadow-sm">To-Do List</h1>
-                    <p class="text-white/85 text-lg font-medium">Apa yang ingin kamu capai hari ini?</p>
+                    <h1 class="text-4xl font-bold text-slate-800 tracking-tight mb-2">To-Do List</h1>
+                    <p class="text-slate-600 text-lg font-medium">Apa yang ingin kamu capai hari ini?</p>
                 </div>
 
                 <!-- Success Alert -->
                 @if(session('success'))
-                    <div class="mb-8 p-4 rounded-xl bg-green-500/20 backdrop-blur-md border border-green-300/30 text-white flex items-center gap-3 animate-[pulse_0.5s_ease-in-out]">
-                        <div class="bg-green-400/30 p-1.5 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="mb-8 p-4 rounded-xl bg-green-100/80 backdrop-blur-md border border-green-200 text-green-800 flex items-center gap-3 animate-[pulse_0.5s_ease-in-out]">
+                        <div class="bg-green-200/50 p-1.5 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                             </svg>
                         </div>
@@ -85,7 +85,7 @@
                     @csrf
                     
                     <div>
-                        <label for="task_name" class="block text-white text-sm font-semibold mb-2 ml-1 tracking-wide">Nama Task Baru</label>
+                        <label for="task_name" class="block text-slate-700 text-sm font-semibold mb-2 ml-1 tracking-wide">Nama Task Baru</label>
                         <div class="relative group">
                             <input 
                                 type="text" 
@@ -100,7 +100,7 @@
 
                     <button 
                         type="submit" 
-                        class="w-full group relative flex items-center justify-center gap-3 overflow-hidden rounded-2xl bg-white px-8 py-4 text-fuchsia-700 font-bold text-lg transition-all duration-300 hover:bg-opacity-90 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(255,255,255,0.3)] active:scale-95"
+                        class="w-full group relative flex items-center justify-center gap-3 overflow-hidden rounded-2xl bg-purple-600 px-8 py-4 text-white font-bold text-lg transition-all duration-300 hover:bg-purple-700 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.3)] active:scale-95"
                     >
                         <span>Tambah Task</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
@@ -112,7 +112,7 @@
         </div>
         
         <!-- Footer Info -->
-        <p class="text-center text-white/70 text-sm mt-8 font-medium tracking-wide">
+        <p class="text-center text-slate-500 text-sm mt-8 font-medium tracking-wide">
             Tugas Kolaborasi &bull; Fitur Create
         </p>
     </div>
