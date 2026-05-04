@@ -9,14 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->string('task_name'); // <-- Tambahkan baris ini
-            $table->timestamps();
-        });
-    }
+   public function up(): void
+{
+    Schema::create('tasks', function (Blueprint $table) {
+        $table->id();
+        $table->string('task_name'); // Tempat menyimpan isi tugasnya
+        $table->boolean('is_completed')->default(false); // Status sudah selesai atau belum
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
