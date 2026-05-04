@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
-// Route untuk menampilkan halaman utama (Read)
+// 1. Menampilkan Halaman Utama & Daftar Tugas (Fitur Orang B)
 Route::get('/', [TaskController::class, 'index']);
 
-// Route untuk menghapus tugas (Delete)
+// 2. Menyimpan Tugas Baru (Fitur Orang A - Kamu)
+Route::post('/tasks', [TaskController::class, 'store']);
+
+// 3. Menghapus Tugas (Fitur Orang B)
 Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
