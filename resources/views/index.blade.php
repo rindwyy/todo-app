@@ -275,6 +275,12 @@
                 </div>
             @endif
 
+            @if(session('error'))
+                <div class="alert-success" style="background: #fee2e2; color: #b91c1c;">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             @if($tasks->isNotEmpty())
                 <ul class="task-list">
                     @foreach ($tasks as $tugas)

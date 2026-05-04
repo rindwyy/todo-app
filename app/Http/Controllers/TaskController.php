@@ -20,10 +20,15 @@ class TaskController extends Controller
     // Fungsi untuk Delete (Menghapus Data)
     public function destroy($id) 
     {
-        // Menghapus tugas berdasarkan ID secara aman (mencegah error jika ID tidak ditemukan)
-        Task::destroy($id); 
-        
-        // Mengembalikan halaman setelah dihapus
-        return redirect()->back()->with('success', 'Tugas berhasil dihapus!'); 
+        try {
+            // Menghapus tugas berdasarkan ID secara aman
+            Task::destroy($id); 
+            
+            // Mengembalikan halaman setelah dihapus
+            return redirect()->back()->with('success', 'Tugas berhasil dihapus!'); 
+        } catch (\Exception $e) {
+            // Jika terjadi error pada koneksi database, berikan pesan error ramah
+            return redirect()->back()->with('error', 'Gagal menghapus tugas karena gangguan sistem. Silakan coba lagi.');
+        }
     }
 }
